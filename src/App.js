@@ -8,8 +8,8 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt")
-      const data = await res.text()
+      const response = await fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt")
+      const data = await response.text()
       setData(data)
     }
     fetchData()
