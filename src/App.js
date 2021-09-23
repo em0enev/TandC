@@ -1,19 +1,23 @@
+import { useEffect, useState } from "react";
 import "./App.css";
+import Document from "./Document";
 
 function App() {
+  const title = "Terms and Conditions"
+  const [data, setData] = useState("")
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("https://jaspervdj.be/lorem-markdownum/markdown.txt")
+      const data = await res.text()
+      setData(data)
+    }
+    fetchData()
+  }, [])
+
   return (
     <div className="App">
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title">A React Task</p>
-          <p class="subtitle">by Boom.dev</p>
-        </div>
-      </section>
-      <div class="container is-fullhd">
-        <div class="notification">
-          Edit the <code>./src</code> folder to add components.
-        </div>
-      </div>
+      <Document title={title} content={data}></Document>
     </div>
   );
 }
