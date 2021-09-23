@@ -16,9 +16,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
       <Document title={title} content={data}></Document>
-    </div>
   );
 }
 

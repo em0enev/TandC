@@ -13,7 +13,7 @@ function Document(props) {
     }
 
     return (
-        <div className="terms">
+        <div >
             <h1 className="title">{props.title}</h1>
             <p className="content" onScroll={(e) => handleScroll(e)}>{props.content}</p>
             <button disabled={isRead ? false : true}>I Agree</button>
