@@ -7,13 +7,11 @@ function Document(props) {
         const element = e.target
         if (element.scrollHeight - element.scrollTop === element.clientHeight) {
             setRead(true)
-        } else {
-            setRead(false)
-        }
+        } 
     }
 
     return (
-        <div >
+        <div className="terms">
             <h1 className="title">{props.title}</h1>
             <p className="content" onScroll={(e) => handleScroll(e)}>{props.content}</p>
             <button disabled={isRead ? false : true}>I Agree</button>
